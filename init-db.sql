@@ -1,0 +1,32 @@
+DROP DATABASE IF EXISTS webdb; CREATE DATABASE webdb;
+USE webdb;
+
+DROP TABLE IF EXISTS users; 
+CREATE TABLE users (
+   id int NOT NULL AUTO_INCREMENT, 
+   login varchar(64) DEFAULT 'chelovek', 
+   money_amount bigint DEFAULT 0, 
+   card_number varchar(16), 
+   status tinyint DEFAULT 0,
+   PRIMARY KEY(id)
+);
+
+INSERT INTO users VALUES (1, 'admin', 999999999, '0000000000000000', 1);
+INSERT INTO users VALUES (2, 'ABRAMOVICH A A', 13694000000, '5228345622851378', 1);
+INSERT INTO users VALUES (3, 'IVANOV I I', 0, '1234234534564567', 0);
+INSERT INTO users VALUES (4, 'TARAS BULBA', 50000, '9640714504064840', 0);
+INSERT INTO users VALUES (5, 'ARTYOM DZUBA', 1234123, '5885223142342913', 1);
+
+DROP TABLE IF EXISTS passes; 
+CREATE TABLE passes(
+   id int NOT NULL AUTO_INCREMENT, 
+   password varchar(128) DEFAULT 12345,
+   PRIMARY KEY (id)
+);
+
+INSERT INTO passes VALUES (1, 'password');
+INSERT INTO passes VALUES (2, '15042001');
+INSERT INTO passes VALUES (3, 'III333');
+INSERT INTO passes VALUES (4, 'zaporozhie');
+INSERT INTO passes VALUES (5, 'go0o0ol');
+
